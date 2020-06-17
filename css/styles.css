@@ -29,14 +29,15 @@ li {
 li a {
   font-family: 'Roboto', sans-serif;
   display: block;
-  color:black;
+  color:white;
   text-align:center;
   padding: 16px;
   text-decoration:none;
+  font-size: 28px;
 }
 
 footer {
-  text-align: center;
+  text-align:center;
   background-color:#f6cd61;
   padding: 3em 0;
 }
@@ -44,9 +45,6 @@ footer {
 footer .footer-list li {
   padding:0;
   width:50%;
-}
-
-hr {
 }
 
 .divider {
@@ -84,7 +82,7 @@ hr {
 .nav-list {
   float:right;
   list-style-type:none;
-  margin-bottom:0px;
+  margin-bottom:0;
   padding:12px 0 12px 0;
   overflow:hidden;
 }
@@ -211,6 +209,7 @@ hr {
 .projects figure {
   max-width:500px;
   max-height:500px;
+  border:1px solid black;
 }
 
 .projects p {
@@ -220,11 +219,11 @@ hr {
 }
 .projects figure img {
   width: 100%;
-  border:1px solid black;
 }
 
+
 #title {
-  background-image:url("images\\splatter.svg");
+  background-image:url("../images/splatter.svg");
   background-size:contain;
 }
 
@@ -263,11 +262,15 @@ hr {
   transition: top 0.3s;
 }
 
-.slider {
+#slider {
   opacity:1;
   transition: opacity 1s;
 }
 
-.slider-fadeout {
+#slider.fadeOut {
   opacity:0;
+}
+
+#link {
+  text-decoration:underline;
 }
