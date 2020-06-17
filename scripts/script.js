@@ -86,26 +86,45 @@ window.onload = function() {
   // Header animation
   var javaBoyElement = document.getElementById("javaboy");
   var javaBoyImages = javaBoyElement.getAttribute("image-rotate");
-  new JavaBoy(javaBoyElement, JSON.parse(javaBoyImages));
+  var javaBoyJumpImages = javaBoyElement.getAttribute("image-jump-rotate");
+  new JavaBoy(javaBoyElement, JSON.parse(javaBoyImages), JSON.parse(javaBoyJumpImages));
 }
 
-function JavaBoy(element, imgArray) {
+function JavaBoy(element, imgArray, imgJumpArray) {
   this.element = element;
   this.imgArray = imgArray;
+  this.imgJumpArray = imgJumpArray;
   this.loopNum = 0;
-  this.x = 0;
+  this.loopJumpNum = 0;
+  this.x = -500;
+  this.y = -15;
   this.disp();
 }
 
 JavaBoy.prototype.disp = function() {
   var that = this;
   var i = this.loopNum % this.imgArray.length;
+  var j = this.loopJumpNum % this.imgJumpArray.length;
+  this.x = this.x + 3;
+  if(this.x > 0 && this.x < 50) {
+    this.element.src = this.imgJumpArray[i];
+    this.element.style.left = this.x + "px";
+    console.log(this.y);
+    if (this.y >= -15 && this.y < 50) {
+      this.y = this.y + 10;
+      this.element.style.top = this.y + "px";
+    } else {
+      this.y = this.y - 10;
+      this.element.style.top = this.y + "px";
+    }
+  } else {
+    this.element.src = this.imgArray[i];
+    this.element.style.left = this.x + "px";
+  }
   setTimeout(function () {
-    that.x = that.x + 100;
-    console.log(that.x);
-    that.element.src = that.imgArray[i];
-    that.element.style.left = that.x;
-    that.disp();
-  }, 3000);
+    if(that.x < 1500) {
+      that.disp();
+    }
+  }, 60);
   this.loopNum++;
 }

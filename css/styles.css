@@ -274,3 +274,11 @@ footer .footer-list li {
 #link {
   text-decoration:underline;
 }
+
+#javaboy {
+  position:absolute;
+  left:-500px;
+  width:100px;
+  height:100px;
+  top:-15px;
+}
