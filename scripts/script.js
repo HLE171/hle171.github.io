@@ -78,9 +78,34 @@ window.onload = function() {
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
   }
-
   // Slider
   var sliderElements = document.getElementById("slider");
   var imgArray = sliderElements.getAttribute("image-rotate");
   new ImageRotate(sliderElements, JSON.parse(imgArray));
+
+  // Header animation
+  var javaBoyElement = document.getElementById("javaboy");
+  var javaBoyImages = javaBoyElement.getAttribute("image-rotate");
+  new JavaBoy(javaBoyElement, JSON.parse(javaBoyImages));
+}
+
+function JavaBoy(element, imgArray) {
+  this.element = element;
+  this.imgArray = imgArray;
+  this.loopNum = 0;
+  this.x = 0;
+  this.disp();
+}
+
+JavaBoy.prototype.disp = function() {
+  var that = this;
+  var i = this.loopNum % this.imgArray.length;
+  setTimeout(function () {
+    that.x = that.x + 100;
+    console.log(that.x);
+    that.element.src = that.imgArray[i];
+    that.element.style.left = that.x;
+    that.disp();
+  }, 3000);
+  this.loopNum++;
 }
