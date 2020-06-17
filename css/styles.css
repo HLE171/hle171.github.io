@@ -71,8 +71,10 @@ footer .footer-list li {
 }
 
 .avatar {
-  width:72px;
-  height:72px;
+  margin-top:11px;
+  marign-bottom:11px;
+  width:50px;
+  height:50px;
 }
 
 .masthead-wrap {

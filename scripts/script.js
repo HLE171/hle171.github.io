@@ -98,6 +98,7 @@ function JavaBoy(element, imgArray, imgJumpArray) {
   this.loopJumpNum = 0;
   this.x = -500;
   this.y = -15;
+  this.isJumping = true;
   this.disp();
 }
 
@@ -106,18 +107,21 @@ JavaBoy.prototype.disp = function() {
   var i = this.loopNum % this.imgArray.length;
   var j = this.loopJumpNum % this.imgJumpArray.length;
   this.x = this.x + 3;
-  if(this.x > 0 && this.x < 50) {
+  if(this.x > -45 && this.x < 75) {
     this.element.src = this.imgJumpArray[i];
     this.element.style.left = this.x + "px";
     console.log(this.y);
-    if (this.y >= -15 && this.y < 50) {
-      this.y = this.y + 10;
+    if (this.isJumping) {
+      this.y = this.y - 4;
       this.element.style.top = this.y + "px";
+      if (this.y < -85) {
+        this.isJumping = false;
+      }
     } else {
-      this.y = this.y - 10;
+      this.y = this.y + 3;
       this.element.style.top = this.y + "px";
     }
-  } else {
+  } else if (y = -15) {
     this.element.src = this.imgArray[i];
     this.element.style.left = this.x + "px";
   }
