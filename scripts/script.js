@@ -78,7 +78,7 @@ window.onload = function() {
     css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
     document.body.appendChild(css);
   }
-  // Slider
+  // Fitty Slider
   var sliderElements = document.getElementById("slider");
   var imgArray = sliderElements.getAttribute("image-rotate");
   new ImageRotate(sliderElements, JSON.parse(imgArray));
@@ -110,7 +110,6 @@ JavaBoy.prototype.disp = function() {
   if(this.x > -45 && this.x < 75) {
     this.element.src = this.imgJumpArray[i];
     this.element.style.left = this.x + "px";
-    console.log(this.y);
     if (this.isJumping) {
       this.y = this.y - 4;
       this.element.style.top = this.y + "px";
@@ -126,7 +125,7 @@ JavaBoy.prototype.disp = function() {
     this.element.style.left = this.x + "px";
   }
   setTimeout(function () {
-    if(that.x < 1500) {
+    if(that.x < 1600) {
       that.disp();
     }
   }, 60);

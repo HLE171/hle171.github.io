@@ -110,7 +110,7 @@ footer .footer-list li {
 
 .header-bot-desc {
   text-align:left;
-  color:#fe8a71;
+  color:#545454;
   font-weight:600;
   font-family: 'Roboto', sans-serif;
   font-size:30px;
@@ -205,13 +205,15 @@ footer .footer-list li {
 }
 
 .projects {
-  margin-bottom:36px;
+  margin-bottom:96px;
 }
 
 .projects figure {
   max-width:500px;
-  max-height:500px;
+  max-height:350px;
   border:1px solid black;
+  margin-top:8px;
+  margin-bot:8px;
 }
 
 .projects p {
@@ -221,6 +223,7 @@ footer .footer-list li {
 }
 .projects figure img {
   width: 100%;
+  height:100%;
 }
 
 
@@ -270,6 +273,15 @@ footer .footer-list li {
 }
 
 #slider.fadeOut {
+  opacity:0;
+}
+
+#lead-engineering-slider {
+  opacity:1;
+  transition: opacity 1s;
+}
+
+#lead-engineering-slider.fadeOut {
   opacity:0;
 }
 
