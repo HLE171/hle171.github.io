@@ -270,9 +270,9 @@ footer .footer-list li {
 }
 
 #download-button {
-  margin-top: 16px;
   background-color:#f6cd61;
 }
+
 #head-slide {
   float:left;
   padding-top:250px;
@@ -289,6 +289,7 @@ footer .footer-list li {
   padding-bottom:28px;
   top:0;
   transition: top 0.3s;
+  overflow:hidden;
 }
 
 #slider {
@@ -315,7 +316,7 @@ footer .footer-list li {
 
 #javaboy {
   position:absolute;
-  left:-500px;
+  left:-400px;
   width:100px;
   height:100px;
   top:-15px;

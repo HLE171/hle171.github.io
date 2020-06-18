@@ -137,7 +137,7 @@ function JavaBoy(element, imgArray, imgJumpArray) {
   this.imgJumpArray = imgJumpArray;
   this.loopNum = 0;
   this.loopJumpNum = 0;
-  this.x = -500;
+  this.x = -400;
   this.y = -15;
   this.isJumping = true;
   this.disp();
