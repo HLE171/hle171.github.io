@@ -88,8 +88,49 @@ window.onload = function() {
   var javaBoyImages = javaBoyElement.getAttribute("image-rotate");
   var javaBoyJumpImages = javaBoyElement.getAttribute("image-jump-rotate");
   new JavaBoy(javaBoyElement, JSON.parse(javaBoyImages), JSON.parse(javaBoyJumpImages));
+
+  // Arrow jiggle
+  var arrowElement = document.getElementById("arrow-jiggle");
+  new arrowJiggle(arrowElement);
+
+  // Anchors
+  var arrowAnchor = document.getElementById("anchor");
+  console.log(arrowAnchor);
+
+  arrowAnchor.addEventListener("click", function() {
+    scrollTo(arrowAnchor);
+  });
 }
 
+// Arrow jiggle
+function arrowJiggle(element) {
+  this.element = element;
+  this.x = 0;
+  this.movingUp = true;
+  this.move();
+}
+
+arrowJiggle.prototype.move = function() {
+  var that = this;
+  setTimeout(function() {
+    if (that.movingUp) {
+      that.element.style.top = that.x + "px";
+      that.x++;
+      if (that.x >= 2) {
+        that.movingUp = false;
+      }
+    } else {
+      that.element.style.top = that.x + "px";
+      that.x--;
+      if (that.x <= -2) {
+        that.movingUp = true;
+      }
+    }
+    that.move();
+  }, 150);
+}
+
+// Java Boy
 function JavaBoy(element, imgArray, imgJumpArray) {
   this.element = element;
   this.imgArray = imgArray;
@@ -130,4 +171,8 @@ JavaBoy.prototype.disp = function() {
     }
   }, 60);
   this.loopNum++;
+}
+
+function scrollTo(hash) {
+  hash.scrollIntoView(true);
 }

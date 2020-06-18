@@ -16,11 +16,11 @@
     <!--
     <script src="C:\Projects\Web Development\Henry Le\scripts\header-animation.js" charset="utf-8"></script>
     -->
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="scripts\script.js" charset="utf-8"></script>
   </head>
 
 <body>
-<script src="scripts\script.js" charset="utf-8"></script>
 <section id="top">
   <div id="home-top">
     <div class="container">
@@ -80,10 +80,15 @@
                 </span>
               </p>
               <div id="header-button-container">
-                <button class="button" id="header-button-left">Download CV!</button>
+                <a href="mailto:henryle171@gmail.com" target="_blank">
+                <button class="button" id="header-button-left">REQUEST CV!</button>
+                </a>
                 <!--
                 <button class="button" id="header-button-right">Send Message</button>
                 -->
+              </div>
+              <div id="anchor">
+                  <img id="arrow-jiggle" src="images\arrow-down.svg">
               </div>
             </div>
           </div>
@@ -133,9 +138,13 @@
           <div class="projects">
             <div class="row">
                 <div class="col-md-6">
-                    <figure>
-                        <img id="slider" src="images\abstract1.svg"
-                        image-rotate='[ "images\\abstract2.svg", "images\\abstract2.svg"]'>
+                    <figure id="fitty-container">
+                        <img id="slider" src="images\fitty1.jpg"
+                        image-rotate='[
+                        "images\\fitty2.jpg",
+                        "images\\fitty3.jpg",
+                        "images\\fitty4.jpg",
+                        "images\\fitty5.jpg"]'>
                     </figure>
                 </div>
                 <div class="col-md-6">
@@ -147,8 +156,8 @@
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-md-6">
-                    <figure>
-                      <video width="500" height="345" autoplay loop muted>
+                    <figure id="javaboy-container">
+                      <video autoplay loop muted>
                         <source src="videos\javaboyvideo.mp4" type="video/mp4">
                           Your browser does not suport this video.
                       </video>
@@ -158,9 +167,9 @@
                     <h3>JavaBoy</h3>
                     <p>lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem</p>
                     <p>dfsdfdfasdfdsa dsf dsf dasf dsf sadf dsf ads sd</p>
-                    <form method="get" action="java\javaboy\JavaBoy.jar">
+                    <a href="java\javaboy\JavaBoy.jar" download="java\javaboy\JavaBoy.jar">
                       <button class="button" id="download-button">download</button>
-                    </form>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -169,9 +178,9 @@
               <div class="col-md-12">
                 <div class="row">
                   <div class="col-md-6">
-                    <figure>
+                    <figure id="lead-container">
                       <a href="https://lead-engineering.com" target="_blank">
-                        <img src="images\lead-engineering.jpg">
+                        <img src="images\lead-engineering2.jpg">
                       </a>
                     </figure>
                   </div>
