@@ -324,9 +324,9 @@ footer .footer-list li {
 
 #anchor {
   position:absolute;
-  border:3px solid #f6cd61;
+  border:3px solid #3da4ab;
   right:0;
-  bottom:0;
+  bottom:100px;
   width:100px;
   height:100px;
 }
